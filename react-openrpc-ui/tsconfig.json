@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "incremental": true,
+      "moduleResolution": "node",
+      "outDir": "build",
+      "sourceMap": true,
+      "strict": true,
+      "declaration": true,
+      "jsx": "react",
+      "lib": ["ESNext", "DOM"],
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "module": "CommonJS"
+    },
+    "exclude": [
+      "./node_modules/**/*"
+    ],
+    "include": [
+      "src/**/*",
+    ]
+  }
