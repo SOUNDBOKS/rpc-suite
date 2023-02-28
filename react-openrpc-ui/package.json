@@ -1,11 +1,12 @@
 {
   "name": "@soundboks/react-openrpc-ui",
   "private": false,
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0",
   "description": "Automatically generate UIs from OpenRPC schemas",
   "main": "build/index.js",
   "repository": "https://github.com/SOUNDBOKS/rpc-suite",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.11",

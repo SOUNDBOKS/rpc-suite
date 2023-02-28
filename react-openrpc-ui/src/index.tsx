@@ -1,25 +1,8 @@
-import * as React from "react";
-
-// "global" ui-config
-import { UIMetaProvider, useUIMeta } from '@ui-schema/ui-schema/UIMeta';
-// for data-stores / data-binding
-import { UIStoreProvider, createEmptyStore, createStore } from '@ui-schema/ui-schema/UIStore';
-import { storeUpdater } from '@ui-schema/ui-schema/storeUpdater';
-
-// util for `PluginStack` rendering
-import { injectPluginStack } from '@ui-schema/ui-schema/applyPluginStack';
-
-// for deep immutables
-import { createOrderedMap } from '@ui-schema/ui-schema/Utils/createMap';
-// for `t` keyword support / basic in-schema translation
-import { relTranslator } from '@ui-schema/ui-schema/Translate/relT';
-
+import { Box, Button } from "@mui/material"
 import { GridContainer, widgets } from "@ui-schema/ds-material"
-import { Box, Button } from "@mui/material";
-import { isInvalid } from "@ui-schema/ui-schema";
-import { useEffect } from "react";
-import Immutable = require("immutable");
-
+import { createEmptyStore, createOrderedMap, injectPluginStack, isInvalid, relTranslator, storeUpdater, UIMetaProvider, UIStoreProvider } from "@ui-schema/ui-schema"
+import React from "react"
+import { useMemo } from "react"
 
 export type SchemaRefResolver = (ref: string) => Promise<object | string>;
 
@@ -50,17 +33,16 @@ function transformSchema(schema: object): object {
 async function createParamsSchema(refResolver: SchemaRefResolver, params: OpenRPCParam[]): Promise<object> {
     return transformSchema({
         "type": "object",
-        "properties": await Promise.all(params.map(async param => {
+        "properties": Object.fromEntries(await Promise.all(params.map(async param => {
             if ('$ref' in param.schema) {
                 const resolved = await refResolver(param.schema["$ref"])
-                return {
-                    name: param.name,
-                    ...(typeof resolved === "string" ? JSON.parse(resolved) : resolved),
-                }
+                return [param.name,
+                    (typeof resolved === "string" ? JSON.parse(resolved) : resolved),
+                ]
             } else {
-                return param.schema
+                return [param.name, param.schema]
             }
-        }))
+        })))
     })
 }
 
@@ -85,7 +67,7 @@ export function RPCSingleMethodUI(props: IRPCSingleMethodUIProps) {
 
     const [store, setStore] = React.useState(() => createEmptyStore("object"));
 
-    useEffect(() => {
+    React.useEffect(() => {
         createParamsSchema(props.schemaRefResolver, props.rpcSchema.params).then(schema => {
             setSchema(createOrderedMap(schema))
         })
@@ -95,25 +77,27 @@ export function RPCSingleMethodUI(props: IRPCSingleMethodUIProps) {
         setStore(storeUpdater(actions))
     }, [setStore])
 
+
     return (
         <Box>
-            <UIMetaProvider
+            <h2>{props.rpcSchema.name}</h2>
+            { schema !== null && <UIMetaProvider
                 widgets={widgets}
                 t={relTranslator}
             >
                 <UIStoreProvider
                     store={store}
                     onChange={onChange}
-                    showValidity={true}
+                    showValidity={false}
                 >
-                    { schema ? <GridStack isRoot schema={schema} /> : null }
+                    <GridStack isRoot schema={schema} />
                 </UIStoreProvider>
-            </UIMetaProvider>
-            <Button variant="contained" sx={{ mt: 2 }} disabled={!!isInvalid(store.getValidity())} onClick={() => {
+            </UIMetaProvider> }
+            { schema !== null && <Button variant="contained" sx={{ mt: 2 }} disabled={!!isInvalid(store.getValidity())} onClick={() => {
                 if (!isInvalid(store.getValidity())) {
                     props.submit(store.valuesToJS() as object)
                 }
-            }} />
+            }}>Submit</Button> }
         </Box>
     )
 }
