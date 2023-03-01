@@ -1,0 +1,106 @@
+{
+  "info": {
+    "title": "IRPCService",
+    "version": "1.0.0"
+  },
+  "openrpc": "1.0.0",
+  "methods": [
+    {
+      "name": "getEntity",
+      "params": [
+        {
+          "name": "entityId",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "getEntity",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/Entity"
+        }
+      }
+    },
+    {
+      "name": "getEntityIDs",
+      "params": [],
+      "result": {
+        "name": "getEntityIDs",
+        "schema": {
+          "type": "array",
+          "members": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "moveEntity",
+      "params": [
+        {
+          "name": "entityId",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "movement",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "direction": {
+                "$ref": "#/components/contentDescriptors/Direction"
+              },
+              "magnitude": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "moveEntity",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "optionalThing",
+      "params": [
+        {
+          "name": "thing",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "optionalThing",
+        "schema": {}
+      }
+    }
+  ],
+  "components": {
+    "contentDescriptor": {
+      "Entity": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Direction": {
+        "type": "string",
+        "enum": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ]
+      }
+    }
+  }
+}

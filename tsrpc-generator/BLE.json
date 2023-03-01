@@ -1,0 +1,916 @@
+{
+  "info": {
+    "title": "ISBSpeakerClient",
+    "version": "1.0.0"
+  },
+  "openrpc": "1.0.0",
+  "methods": [
+    {
+      "name": "setSerialNumber",
+      "params": [
+        {
+          "name": "serialNumber",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "setSerialNumber",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "setTeamId",
+      "params": [
+        {
+          "name": "teamId",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "setTeamId",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "getSkaaId",
+      "params": [],
+      "result": {
+        "name": "getSkaaId",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "getProductDeviceId",
+      "params": [],
+      "result": {
+        "name": "getProductDeviceId",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "signedMessageCommand",
+      "params": [
+        {
+          "name": "messagePayload",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "signedMessageCommand",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "getCryptoNonce",
+      "params": [],
+      "result": {
+        "name": "getCryptoNonce",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "getSecurityId",
+      "params": [],
+      "result": {
+        "name": "getSecurityId",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "setSecurityId",
+      "params": [
+        {
+          "name": "securityId",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "setSecurityId",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "getPrivateKeyHash",
+      "params": [],
+      "result": {
+        "name": "getPrivateKeyHash",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "getEncryptionKey",
+      "params": [],
+      "result": {
+        "name": "getEncryptionKey",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "getPrivateKeyLength",
+      "params": [],
+      "result": {
+        "name": "getPrivateKeyLength",
+        "schema": {
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "readSerialNumber",
+      "params": [],
+      "result": {
+        "name": "readSerialNumber",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "getFirmwareGitSHA",
+      "params": [
+        {
+          "name": "long",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "getFirmwareGitSHA",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "getSystemStatus",
+      "params": [],
+      "result": {
+        "name": "getSystemStatus",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/ISystemStatus/schema"
+        }
+      }
+    },
+    {
+      "name": "startTweeterCalibration",
+      "params": [
+        {
+          "name": "targetTemperature",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "startTweeterCalibration",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "abortTweeterCalibration",
+      "params": [],
+      "result": {
+        "name": "abortTweeterCalibration",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "selectChip",
+      "params": [
+        {
+          "name": "chip",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "selectChip",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "autoReboot",
+      "params": [],
+      "result": {
+        "name": "autoReboot",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "testBluetoothConnection",
+      "params": [],
+      "result": {
+        "name": "testBluetoothConnection",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "authenticate",
+      "params": [
+        {
+          "name": "passcode",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "authenticate",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readName",
+      "params": [],
+      "result": {
+        "name": "readName",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "readSecurityLevel",
+      "params": [],
+      "result": {
+        "name": "readSecurityLevel",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/ISB3SecurityLevel/schema"
+        }
+      }
+    },
+    {
+      "name": "readPowerMode",
+      "params": [],
+      "result": {
+        "name": "readPowerMode",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/PowerMode/schema"
+        }
+      }
+    },
+    {
+      "name": "writePowerMode",
+      "params": [
+        {
+          "name": "mode",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/PowerMode/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "writePowerMode",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "writeAutoboot",
+      "params": [
+        {
+          "name": "flag",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/AutoBoot/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeAutoboot",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readVolume",
+      "params": [],
+      "result": {
+        "name": "readVolume",
+        "schema": {
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "writeVolume",
+      "params": [
+        {
+          "name": "value",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeVolume",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readSkaaMode",
+      "params": [],
+      "result": {
+        "name": "readSkaaMode",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/SkaaMode/schema"
+        }
+      }
+    },
+    {
+      "name": "writeSkaaMode",
+      "params": [
+        {
+          "name": "skaaMode",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/SkaaMode/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeSkaaMode",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readSkaaCCD",
+      "params": [],
+      "result": {
+        "name": "readSkaaCCD",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "writeSkaaCCD",
+      "params": [
+        {
+          "name": "skaaCCD",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeSkaaCCD",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readEQMode",
+      "params": [],
+      "result": {
+        "name": "readEQMode",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/EQMode/schema"
+        }
+      }
+    },
+    {
+      "name": "writeEQMode",
+      "params": [
+        {
+          "name": "eqMode",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/EQMode/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeEQMode",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readSoundStatusInput",
+      "params": [],
+      "result": {
+        "name": "readSoundStatusInput",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/SoundStatusInput/schema"
+        }
+      }
+    },
+    {
+      "name": "readStereoRole",
+      "params": [],
+      "result": {
+        "name": "readStereoRole",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/StereoRole/schema"
+        }
+      }
+    },
+    {
+      "name": "writeStereoRole",
+      "params": [
+        {
+          "name": "role",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/StereoRole/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeStereoRole",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readXlrCh1Preset",
+      "params": [],
+      "result": {
+        "name": "readXlrCh1Preset",
+        "schema": {
+          "type": "array",
+          "prefixItems": []
+        }
+      }
+    },
+    {
+      "name": "writeXlrCh1Preset",
+      "params": [
+        {
+          "name": "preset",
+          "schema": {
+            "type": "array",
+            "prefixItems": []
+          }
+        }
+      ],
+      "result": {
+        "name": "writeXlrCh1Preset",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readXlrCh2Preset",
+      "params": [],
+      "result": {
+        "name": "readXlrCh2Preset",
+        "schema": {
+          "type": "array",
+          "prefixItems": []
+        }
+      }
+    },
+    {
+      "name": "writeXlrCh2Preset",
+      "params": [
+        {
+          "name": "preset",
+          "schema": {
+            "type": "array",
+            "prefixItems": []
+          }
+        }
+      ],
+      "result": {
+        "name": "writeXlrCh2Preset",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readXlrCh1Mode",
+      "params": [],
+      "result": {
+        "name": "readXlrCh1Mode",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/XLRChannelMode/schema"
+        }
+      }
+    },
+    {
+      "name": "writeXlrCh1Mode",
+      "params": [
+        {
+          "name": "mode",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/XLRChannelMode/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeXlrCh1Mode",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "readXlrCh2Mode",
+      "params": [],
+      "result": {
+        "name": "readXlrCh2Mode",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/XLRChannelMode/schema"
+        }
+      }
+    },
+    {
+      "name": "writeXlrCh2Mode",
+      "params": [
+        {
+          "name": "mode",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/XLRChannelMode/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "writeXlrCh2Mode",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "getMiniatureUpdateState",
+      "params": [],
+      "result": {
+        "name": "getMiniatureUpdateState",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/IMiniatureUpdateState/schema"
+        }
+      }
+    },
+    {
+      "name": "miniatureUpdateBegin",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/IMiniatureUpdateBeginData/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "miniatureUpdateBegin",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "sendMiniatureUpdateComplete",
+      "params": [],
+      "result": {
+        "name": "sendMiniatureUpdateComplete",
+        "schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "doesMiniatureUpdateVerifyCRC",
+      "params": [
+        {
+          "name": "args",
+          "schema": {
+            "$ref": "#/components/contentDescriptors/IMiniatureUpdateVerifyCRCArgs/schema"
+          }
+        }
+      ],
+      "result": {
+        "name": "doesMiniatureUpdateVerifyCRC",
+        "schema": {
+          "$ref": "#/components/contentDescriptors/MiniatureUpdateVerifyCRCResult/schema"
+        }
+      }
+    }
+  ],
+  "components": {
+    "contentDescriptors": {
+      "SpeakerFeature": {
+        "name": "SpeakerFeature",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "DEVICE_ID",
+            "DEVICE_VOLUME",
+            "DEVICE_REGISTER",
+            "DIAGNOSTICS",
+            "PRO_PANEL",
+            "SKAA_CCD",
+            "SOUND_EQ",
+            "SOUND_STEREO_ROLE",
+            "SOUND_STEREO_ROLE_MONITOR",
+            "SOUND_STATUS_INPUT",
+            "PRODUCT_LOCK",
+            "PRODUCT_GET_SERIAL_NUMBER",
+            "SETTINGS_SAVE",
+            "SETTINGS_BT_AUTOCONNECT",
+            "SETTINGS_BT_PASSWORD",
+            "SETTINGS_PRO_SKAA",
+            "SETUP_TEAMS",
+            "BACKGROUND_UPDATE",
+            "TWEETER_PROTECTION_CALIBRATION",
+            "CURRENT_UPDATE_MANIFEST"
+          ]
+        }
+      },
+      "ProductModel": {
+        "name": "ProductModel",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "SB3",
+            "SB75",
+            "SB4",
+            "FF1"
+          ]
+        }
+      },
+      "ISystemStatus": {
+        "name": "ISystemStatus",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "isUpdateOnlyFirmware": {
+              "type": "boolean"
+            },
+            "isCalibratingTweeter": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "XLRChannelMode": {
+        "name": "XLRChannelMode",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "MIXER",
+            "MIC",
+            "GUITAR",
+            "ACTIVE_INSTRUMENT"
+          ]
+        }
+      },
+      "ISB3SecurityLevel": {
+        "name": "ISB3SecurityLevel",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "passwordEnabled": {
+              "type": "boolean"
+            },
+            "isLocked": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "PowerMode": {
+        "name": "PowerMode",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "OFF",
+            "ON"
+          ]
+        }
+      },
+      "AutoBoot": {
+        "name": "AutoBoot",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "DISABLE",
+            "ONCE",
+            "ALWAYS"
+          ]
+        }
+      },
+      "SkaaMode": {
+        "name": "SkaaMode",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "SOLO",
+            "HOST",
+            "JOIN"
+          ]
+        }
+      },
+      "EqualizerMode": {
+        "name": "EqualizerMode",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "DEFAULT",
+            "BASSPLUS",
+            "CONTROLLED",
+            "PRO"
+          ]
+        }
+      },
+      "EQMode": {
+        "name": "EQMode",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "$ref": "#/components/contentDescriptors/EqualizerMode/schema"
+            },
+            "proValues": {
+              "type": "array",
+              "prefixItems": []
+            }
+          }
+        }
+      },
+      "SoundStatusInput": {
+        "name": "SoundStatusInput",
+        "schema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "StereoRole": {
+        "name": "StereoRole",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "MONO",
+            "LEFT",
+            "RIGHT"
+          ]
+        }
+      },
+      "UpdateType": {
+        "name": "UpdateType",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "MCU",
+            "DSP",
+            "ATTINY",
+            "GINSENG_EEPROM",
+            "BM64EEPROM",
+            "BM64FLASH",
+            "BOOTLOADER",
+            "FACTORY_RESET_OVERWRITE",
+            "HEX_FILE_PROGRAM",
+            "CRYPTO_CERTIFICATE_STORE"
+          ]
+        }
+      },
+      "IMiniatureUpdateState": {
+        "name": "IMiniatureUpdateState",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "hasActivePayload": {
+              "type": "boolean"
+            },
+            "otaType": {
+              "$ref": "#/components/contentDescriptors/UpdateType/schema"
+            },
+            "relativeChunkPos": {
+              "type": "number"
+            },
+            "currentChunkLength": {
+              "type": "number"
+            },
+            "relativePackagePos": {
+              "type": "number"
+            },
+            "chunkCRC16": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "IMiniatureUpdateBeginData": {
+        "name": "IMiniatureUpdateBeginData",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "otaType": {
+              "$ref": "#/components/contentDescriptors/UpdateType/schema"
+            },
+            "relativeChunkPos": {
+              "type": "number"
+            },
+            "chunkLength": {
+              "type": "number"
+            },
+            "chunkCRC16": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "IMiniatureUpdateVerifyCRCArgs": {
+        "name": "IMiniatureUpdateVerifyCRCArgs",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "otaType": {
+              "$ref": "#/components/contentDescriptors/UpdateType/schema"
+            },
+            "relativeChunkPos": {
+              "type": "number"
+            },
+            "chunkLength": {
+              "type": "number"
+            },
+            "chunkCRC16": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "Error": {
+        "name": "Error",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "stack": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "MiniatureUpdateVerifyCRCResult": {
+        "name": "MiniatureUpdateVerifyCRCResult",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "isVerify": {
+              "type": "boolean"
+            },
+            "error": {
+              "$ref": "#/components/contentDescriptors/Error/schema"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@soundboks/tsrpc-generator",
+  "version": "0.1.0-rc.0",
+  "description": "A tool to generate OpenRPC schemas from TS definitions",
+  "main": "build/index.js",
+  "repository": "https://github.com/SOUNDBOKS/rpc-suite",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn ts-node src/cli.ts",
+    "build": "yarn tsc",
+    "release:github": "yarn build && yarn publish --no-git-tag-version --registry=https://npm.pkg.github.com",
+    "release:npm": "yarn build && yarn publish --no-git-tag-version --access public",
+    "release": "yarn release:github && yarn release:npm"
+  },
+  "dependencies": {
+    "@types/node": "^18.14.2",
+    "minimist": "^1.2.8",
+    "typescript": "^4.9.5"
+  },
+  "bin": {
+    "tsrpc-generator": "build/cli.js"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.2",
+    "ts-node": "^10.9.1"
+  }
+}
